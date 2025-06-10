@@ -1,12 +1,11 @@
 import { useState } from 'react'
-import './App.css'
 
 export default function Home() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className="card">
+      <div className="p-[2em]">
         <button onClick={() => setCount(count => count + 1)}>
           count is
           {' '}
@@ -20,7 +19,7 @@ export default function Home() {
           and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs">
+      <p className="text-[#888]">
         Click on the Vite and React logos to learn more
       </p>
     </>

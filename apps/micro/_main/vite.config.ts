@@ -1,9 +1,10 @@
 import react from '@vitejs/plugin-react'
+import WindiCSS from 'vite-plugin-windicss'
 import { defineConfig } from 'vitest/config'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [WindiCSS(), react()],
   test: {
     globals: true,
     environment: 'happy-dom',

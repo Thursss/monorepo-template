@@ -3,6 +3,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
 import router from './router'
+import 'virtual:windi.css'
 import './index.css'
 
 microApp.start({
