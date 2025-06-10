@@ -27,6 +27,7 @@
   },
   "include": [
     "apps/**/src",
+    "global.d.ts",
     "packages"
   ]
 }
