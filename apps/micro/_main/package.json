@@ -1,5 +1,5 @@
 {
-  "name": "main",
+  "name": "@monorepo-template/m-main",
   "type": "module",
   "version": "0.0.0",
   "private": true,
