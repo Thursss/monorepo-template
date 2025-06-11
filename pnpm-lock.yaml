@@ -75,6 +75,9 @@ importers:
       '@ant-design/icons':
         specifier: ^6.0.0
         version: 6.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@generouted/react-router':
+        specifier: ^1.20.0
+        version: 1.20.0(react-router@7.6.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)(vite@6.3.5(@types/node@24.0.0)(jiti@2.4.2)(yaml@2.8.0))
       '@micro-zoe/micro-app':
         specifier: 1.0.0-rc.26
         version: 1.0.0-rc.26
@@ -667,6 +670,13 @@ packages:
   '@eslint/plugin-kit@0.3.1':
     resolution: {integrity: sha512-0J+zgWxHN+xXONWIyPWKFMgVuJoZuGiIFu8yxk7RJjxkzpGmyja5wRFqZIVtjDVOQpV+Rw0iOAjYPE2eQyjr0w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@generouted/react-router@1.20.0':
+    resolution: {integrity: sha512-VAOdbH/Z2MzroTB61XYsS1uMJvX5am7CKuF/MgF3ZXS6YSvA6rz9pvQxZbg5PIK4R9h7bsA/oRQlJNLSgQKjEA==}
+    peerDependencies:
+      react: '>=18'
+      react-router: '>=7'
+      vite: '>=5'
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2012,6 +2022,11 @@ packages:
 
   functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
+
+  generouted@1.20.0:
+    resolution: {integrity: sha512-VXU5dFsWdm/faFo2fTGW5obYxy8hhM6B1WXYhCLAV+5pODhrsu8RBc/1IsOQKqtHFYqsuSE5C5KpzmBaLllUqg==}
+    peerDependencies:
+      vite: '>=5'
 
   gensync@1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
@@ -4235,6 +4250,14 @@ snapshots:
       '@eslint/core': 0.14.0
       levn: 0.4.1
 
+  '@generouted/react-router@1.20.0(react-router@7.6.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)(vite@6.3.5(@types/node@24.0.0)(jiti@2.4.2)(yaml@2.8.0))':
+    dependencies:
+      fast-glob: 3.3.3
+      generouted: 1.20.0(vite@6.3.5(@types/node@24.0.0)(jiti@2.4.2)(yaml@2.8.0))
+      react: 19.1.0
+      react-router: 7.6.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      vite: 6.3.5(@types/node@24.0.0)(jiti@2.4.2)(yaml@2.8.0)
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.6':
@@ -5846,6 +5869,10 @@ snapshots:
   function-bind@1.1.2: {}
 
   functions-have-names@1.2.3: {}
+
+  generouted@1.20.0(vite@6.3.5(@types/node@24.0.0)(jiti@2.4.2)(yaml@2.8.0)):
+    dependencies:
+      vite: 6.3.5(@types/node@24.0.0)(jiti@2.4.2)(yaml@2.8.0)
 
   gensync@1.0.0-beta.2: {}
 
