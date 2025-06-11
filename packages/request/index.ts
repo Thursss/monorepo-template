@@ -151,10 +151,10 @@ class RequestManager {
     config.signal = this.pendingRequests.get(requestId).controller.signal
 
     // 发起请求
-    return this.instance(config)
+    return this.instance<T>(config)
       .then((response) => {
         this.completeRequest(requestId)
-        return response
+        return response.data
       })
       .catch((error) => {
         if (axios.isCancel(error)) {
@@ -164,7 +164,7 @@ class RequestManager {
           this.completeRequest(requestId)
         }
         throw error
-      }) as Promise<T>
+      })
   }
 
   get<T>(config: Omit<AxiosRequestConfig, 'method'>, opts?: { callback?: (requestId: string) => void, debounce?: boolean }) {
