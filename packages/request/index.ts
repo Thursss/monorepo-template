@@ -128,10 +128,14 @@ class RequestManager {
   }
 
   /**
-   * 封装的请求方法
-   * @param {object} config Axios 配置
-   * @param {Function} [callback] 回调函数(requestId)
-   * @returns {Promise} Axios 请求Promise
+   * 发起请求并管理请求队列
+   * @template T 响应数据类型
+   * @param config Axios请求配置
+   * @param opts 可选参数
+   * @param opts.callback 请求开始时的回调函数，接收请求ID，可用于手动取消请求
+   * @param opts.debounce 是否启用防抖，默认为true
+   * @returns 返回Promise包装的响应数据
+   * @throws 当请求失败时抛出错误
    */
   request<T>(config: AxiosRequestConfig, opts?: { callback?: (requestId: string) => void, debounce?: boolean }) {
     const { callback, debounce = true } = opts || {}
@@ -161,6 +165,14 @@ class RequestManager {
         }
         throw error
       }) as Promise<T>
+  }
+
+  get<T>(config: Omit<AxiosRequestConfig, 'method'>, opts?: { callback?: (requestId: string) => void, debounce?: boolean }) {
+    return this.request<T>({ method: 'get', ...config }, opts)
+  }
+
+  post<T>(config: Omit<AxiosRequestConfig, 'method'>, opts?: { callback?: (requestId: string) => void, debounce?: boolean }) {
+    return this.request<T>({ method: 'post', ...config }, opts)
   }
 
   /**
@@ -223,4 +235,5 @@ class RequestManager {
   }
 }
 
+export type { AxiosInstance, AxiosRequestConfig, CreateAxiosDefaults }
 export default RequestManager

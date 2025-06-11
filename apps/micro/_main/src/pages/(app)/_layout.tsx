@@ -5,7 +5,7 @@ import {
   UserOutlined,
 } from '@ant-design/icons'
 import { Breadcrumb, Layout, Menu, theme } from 'antd'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 
 const { Header, Content, Footer, Sider } = Layout
@@ -38,13 +38,13 @@ const items: MenuItem[] = [
 const App: React.FC = () => {
   const navigate = useNavigate()
 
-  // // 认证状态
-  // const isAuthenticated = localStorage.getItem('token')
-  // useEffect(() => {
-  //   if (!isAuthenticated) {
-  //     navigate('/login')
-  //   }
-  // }, [navigate, isAuthenticated])
+  // 认证状态
+  const isAuthenticated = localStorage.getItem('token')
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate('/login')
+    }
+  }, [navigate, isAuthenticated])
 
   const handleMenuClick = (e: MenuItem) => {
     navigate(e!.key as string)
