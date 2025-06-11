@@ -2,6 +2,11 @@ import type { AxiosRequestConfig } from '@monorepo-template/request'
 import RequestManager from '@monorepo-template/request'
 import { message } from 'antd'
 
+interface BaseApiType<T> {
+  code: number
+  data?: T
+}
+
 const r = new RequestManager({
   baseURL: 'http://localhost:3000',
   timeout: 30000,
@@ -19,7 +24,7 @@ function decorators(fn: <T>(...opt: any) => Promise<T>) {
     callback?: (requestId: string) => void
     debounce?: boolean
   }) => {
-    return fn.bind(r)<T>(config, opts).then((res: any) => {
+    return fn.bind(r)<BaseApiType<T>>(config, opts).then((res) => {
       return res
     }).catch((err: any) => {
       if (err.code === 'ERR_CANCELED') {

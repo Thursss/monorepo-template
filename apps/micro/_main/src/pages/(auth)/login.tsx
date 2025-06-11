@@ -23,7 +23,7 @@ const Login: React.FC = () => {
       password,
     })
     if (res?.code === 200) {
-      localStorage.setItem('token', 'xxxxxxxxxxxx')
+      localStorage.setItem('token', res.data?.token || '')
       nav('/')
     }
     else {
