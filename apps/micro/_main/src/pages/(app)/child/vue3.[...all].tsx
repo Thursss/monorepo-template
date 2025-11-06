@@ -16,7 +16,7 @@ export default function Vue3() {
   }
 
   useEffect(() => {
-    microApp.router.push({
+    microFlag.current && microApp.router.push({
       name: 'vue3',
       path: location.pathname,
       replace: true,
