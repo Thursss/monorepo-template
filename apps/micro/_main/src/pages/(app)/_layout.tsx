@@ -2,6 +2,7 @@ import type { MenuProps } from 'antd'
 import {
   FileOutlined,
   PieChartOutlined,
+  TeamOutlined,
   UserOutlined,
 } from '@ant-design/icons'
 import { Breadcrumb, Layout, Menu, theme } from 'antd'
@@ -28,11 +29,17 @@ function getItem(
 
 const items: MenuItem[] = [
   getItem('首页', '/', <PieChartOutlined />),
-  getItem('child1', 'sub', <UserOutlined />, [
-    getItem('child1', '/child1', <FileOutlined />),
-    getItem('关于child1', '/child1?router=/about', <FileOutlined />),
-    getItem('其他', '/child1?router=/other/sss', <FileOutlined />),
+  getItem('child-vue3', '/vue3', <UserOutlined />, [
+    getItem('vue3', '/child/vue3', <FileOutlined />),
+    getItem('关于vue3', '/child/vue3/about', <FileOutlined />),
+    getItem('其他', '/child/vue3/other/sss', <FileOutlined />),
   ]),
+  getItem('child-vue2', '/vue2', <FileOutlined />, [
+    getItem('vue2', '/child/vue2', <FileOutlined />),
+    getItem('element-ui', '/child/vue2/element-ui', <FileOutlined />),
+    getItem('ant-design-vue', '/child/vue2/ant-design-vue', <FileOutlined />),
+  ]),
+  getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
 ]
 
 const App: React.FC = () => {

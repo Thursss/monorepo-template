@@ -17,6 +17,7 @@ export default antfu({
     }],
     'ts/ban-ts-comment': 'off',
     // 其他规则
+    'eslint-comments/no-unlimited-disable': 'off',
   },
   // 忽略文件
   ignores: [

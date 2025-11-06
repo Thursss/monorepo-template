@@ -4,7 +4,7 @@ import {
 } from 'vue-router'
 
 export default createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/child/vue3'),
   routes: [
     {
       path: '/',

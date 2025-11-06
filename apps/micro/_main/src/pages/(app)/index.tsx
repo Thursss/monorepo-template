@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <div className="p-[2em]">
-        <button onClick={() => setCount(count => count + 1)}>
+        <button type="button" onClick={() => setCount(count => count + 1)}>
           count is
           {' '}
           {count}
